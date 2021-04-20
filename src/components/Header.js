@@ -1,7 +1,7 @@
 const Header = () => {
     return (
-        <header>
-            <h2> React.js with Three.js</h2>
+        <header className = 'header'>
+            <h1> React.js with Three.js</h1>
         </header>
     )
 }
