@@ -14,7 +14,7 @@ body {
 hmtl, body{
   place-items: center;
   height: 100vh;
-  background: rgb(8,8,8)
+  background: #000
 }
 
 .header
@@ -62,10 +62,7 @@ h1::before
   }
 }
 
-section 
-{
-  height: 100vh;
-}
+
 
 .webgl
 {
@@ -74,4 +71,59 @@ section
   left:0;
   outline:none;
   mix-blend-mode: exclusion;
+}
+.About
+{
+background: #000;
+position: relative;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 100%;
+
+}
+
+.About span
+{
+text-transform: uppercase;
+display: block;
+}
+
+.text1
+{ 
+  color:white;
+  padding-left: 10%;
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  margin-bottom: 20px;
+  background: black;
+  position: relative;
+  animation: text 3s 1;
+}
+.text2
+{
+  font-size: 30px;
+  color: #FFC0CB;
+  padding-left: 10%;
+
+}
+
+@keyframes text
+{
+  0%
+  {
+    color:black;
+    margin-bottom: -40px;
+  }
+  30%
+  {
+    letter-spacing:25px;
+    margin-bottom: -40px;
+  }
+  85%
+  {
+    letter-spacing: 8px;
+    margin-bottom: -40px;
+  }
 }

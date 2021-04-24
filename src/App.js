@@ -1,5 +1,6 @@
 import Header from './components/Header'
 import Body from './components/Body'
+import About from './components/About'
 
 
 
@@ -8,7 +9,7 @@ function App() {
     <div className="container">
       <Header></Header>
       <Body></Body>
-      <section></section>
+      <About></About>
       
     </div>
   );

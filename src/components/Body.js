@@ -27,7 +27,7 @@ class Body extends Component {
     
     //Particles@
     const particlesGeometry = new THREE.BufferGeometry;
-    const particlesCount = 2000;
+    const particlesCount = 1500;
 
     //provide us x,y,z coordinates for each particle (in this case 5000)
     const posArray = new Float32Array (particlesCount * 3);
@@ -52,7 +52,7 @@ class Body extends Component {
     //Mesh
     const sphere = new THREE.Mesh(geometry, material); //sphere
     const particlesMesh = new THREE.Points(particlesGeometry, pmaterial); //particles
-    scene.add(sphere, particlesMesh);
+    scene.add( particlesMesh ,sphere );
 
     //Light 1 wGUI 
     //Make GUI folder
@@ -192,9 +192,10 @@ class Body extends Component {
       sphere.position.z += -.05 * (targetY - sphere.rotation.x)
 
       //particles rotation
-      particlesMesh.rotation.x = 0.5 * elapsedTime;
-      particlesMesh.rotation.x = mouseY * (elapsedTime * .0008)
-      particlesMesh.rotation.y = mouseX * (elapsedTime * .0008)
+      particlesMesh.rotation.x = 0.1 * elapsedTime;
+      particlesMesh.rotation.y = 0.1 * elapsedTime;
+      //particlesMesh.rotation.x = mouseY * (elapsedTime * .0008)
+      //particlesMesh.rotation.y = mouseX * (elapsedTime * .0008)
       
       //particlesMesh.rotation.y += .005 * (targetX - particlesMesh.rotation.y)
     };
