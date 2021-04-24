@@ -6,7 +6,6 @@ import img from '../img/normalMap.png';
 
 
 
-
 class Body extends Component {
   componentDidMount() {
 
@@ -24,51 +23,33 @@ class Body extends Component {
 
     //Object
     var geometry = new THREE.SphereBufferGeometry(.5, 64, 64);
-    
-    //Particles@
-    const particlesGeometry = new THREE.BufferGeometry;
-    const particlesCount = 2000;
-
-    //provide us x,y,z coordinates for each particle (in this case 5000)
-    const posArray = new Float32Array (particlesCount * 3);
-
-    for (let i = 0; i < particlesCount * 3; i++)
-    {
-      //posArray[i] = Math.random() //ramdom placement
-      //posArray[i] = Math.random() - 0.5 //center particles
-      posArray[i] = (Math.random() - 0.5) * 5 //scatters paricles
-    }
-
-    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3))
 
     //Material for object
-    const pmaterial = new THREE.PointsMaterial({size: .001, transparent: true, /*blending: THREE.AdditiveBlending*/})
-    var material = new THREE.MeshStandardMaterial({ color: 0xff0000, depthTest: true });
+    var material = new THREE.MeshStandardMaterial({ color: 0xff0000, });
     material.metalness = 0.7
     material.roughness = 0.2
     material.normalMap = normalTexture;
     material.color = new THREE.Color(0x292929)
 
     //Mesh
-    const sphere = new THREE.Mesh(geometry, material); //sphere
-    const particlesMesh = new THREE.Points(particlesGeometry, pmaterial); //particles
-    scene.add(sphere, particlesMesh);
+    const sphere = new THREE.Mesh(geometry, material);
+    scene.add(sphere);
 
     //Light 1 wGUI 
     //Make GUI folder
     const light1 = gui.addFolder('Light 1')
     const pointLight1 = new THREE.PointLight(0xffffff, 0.2)
-      pointLight1.intensity = .09;
-      pointLight1.position.set(3.95,-10,20)
-      scene.add(pointLight1)
+    pointLight1.intensity = .09;
+    pointLight1.position.set(3.95,-10,20)
+    scene.add(pointLight1)
   
-      light1.add(pointLight1.position, 'y').min (-10).max(20).step(.01)
-      light1.add(pointLight1.position, 'x').min (-10).max(20).step(.01)
-      light1.add(pointLight1.position, 'z').min (-10).max(20).step(.01)
-      light1.add(pointLight1, 'intensity').min (-3).max(20).step(.01)
+    light1.add(pointLight1.position, 'y').min (-10).max(20).step(.01)
+    light1.add(pointLight1.position, 'x').min (-10).max(20).step(.01)
+    light1.add(pointLight1.position, 'z').min (-10).max(20).step(.01)
+    light1.add(pointLight1, 'intensity').min (-3).max(20).step(.01)
 
-      //const pointLightHelper1 = new THREE.PointLightHelper(pointLight1, .5)
-      //scene.add(pointLightHelper1)
+    const pointLightHelper1 = new THREE.PointLightHelper(pointLight1, .5)
+    scene.add(pointLightHelper1)
     
     
 
@@ -84,8 +65,8 @@ class Body extends Component {
         light2.add(pointLight2.position, 'z').min (-10).max(20).step(.01)
         light2.add(pointLight2, 'intensity').min (-3).max(20).step(.01)
 
-        //const pointLightHelper = new THREE.PointLightHelper(pointLight2, .5)
-        //scene.add(pointLightHelper)
+        const pointLightHelper = new THREE.PointLightHelper(pointLight2, .5)
+        scene.add(pointLightHelper)
 
     //Light 3 w/GUI
     const pointLight3 = new THREE.PointLight(0xff009a, .2)
@@ -99,8 +80,8 @@ class Body extends Component {
         light3.add(pointLight3.position, 'z').min (-10).max(20).step(.01)
         light3.add(pointLight3, 'intensity').min (-3).max(20).step(.01)
 
-        //const pointLightHelper3 = new THREE.PointLightHelper(pointLight3, .5)
-        //scene.add(pointLightHelper3)
+        const pointLightHelper3 = new THREE.PointLightHelper(pointLight3, .5)
+        scene.add(pointLightHelper3)
 
     //Allow GUI to change colour
     const light1colour = { color : 0xff0000 }
@@ -163,56 +144,37 @@ class Body extends Component {
     const windowX = window.innerWidth/2;
     const windowY = window.innerHeight/2;
 
-    function onDocumentMouseMove(event) 
-    {
+    function onDocumentMouseMove(event) {
       mouseX = (event.clientX - windowX)
-      mouseY = (event.clientY - windowY)
+      mouseY = (event.cientY - windowY)
     }
   
     const clock = new THREE.Clock()
 
-    const updateSphere = (event) => 
-    {
-      sphere.position.y = window.scrollY * .001
-    }
-    window.addEventListener('scroll', updateSphere);
+    var animate = function() {
 
-    //update
-    var update = function( )
-    {
       const elapsedTime = clock.getElapsedTime()
-      //sphere follows mouse
+
       targetX = mouseX * .001
       targetY = mouseY * .001
 
       sphere.rotation.y = 0.5 * elapsedTime;
       //sphere.rotation.x = -0.015 * elapsedTime;
-      sphere.rotation.y += .05 * (targetX - sphere.rotation.y)
-      sphere.rotation.x += .05 * (targetY - sphere.rotation.x)
-      sphere.position.z += -.05 * (targetY - sphere.rotation.x)
-
-      //particles rotation
-      particlesMesh.rotation.y = 0.5 * elapsedTime;
-      particlesMesh.rotation.x = mouseY * (elapsedTime * .0008)
-      particlesMesh.rotation.y = mouseX * (elapsedTime * .0008)
+      sphere.rotation.y += .5 *(targetX - sphere.rotation.y)
+      //sphere.rotation.x += .5 *(targetY - sphere.rotation.x)
+      //sphere.rotation.z += -.5 *(targetY - sphere.rotation.x)
       
-      //particlesMesh.rotation.y += .005 * (targetX - particlesMesh.rotation.y)
-    };
 
-    var animate = function() 
-    {
+      
+
       renderer.render(scene, camera);
       window.requestAnimationFrame(animate);
-      update()
     };
 
     animate();
   }
-    render() 
-    {
-      return <div ref={ref => (this.mount = ref)} />;
-    }
-    
+  render() {
+    return <div ref={ref => (this.mount = ref)} />;
+  }
 }
-
 export default Body
