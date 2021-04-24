@@ -2,6 +2,7 @@ import '../index.css';
 import React, {Component} from "react"; 
 import * as THREE from "three";
 import * as dat from 'dat.gui';
+import img from '../img/NM.png';
 
 
 
@@ -12,7 +13,7 @@ class Body extends Component {
     const gui = new dat.GUI()
     //Texture loader
     const textureLoader = new THREE.TextureLoader()
-    const normalTexture = textureLoader.load('../img/normalMapF.png')
+    const normalTexture = textureLoader.load(img)
     //canvas
     const canvas = document.querySelector('canvas.webgl')
     //Create scene
