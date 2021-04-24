@@ -2,7 +2,7 @@ import '../index.css';
 import React, {Component} from "react"; 
 import * as THREE from "three";
 import * as dat from 'dat.gui';
-import img from '../img/NM.png';
+import img from '../img/normalMap.png';
 
 
 
@@ -11,7 +11,7 @@ class Body extends Component {
 
     //debug
     const gui = new dat.GUI()
-    //Texture loader
+    //Texture loader (Have to import img above before being used here)
     const textureLoader = new THREE.TextureLoader()
     const normalTexture = textureLoader.load(img)
     //canvas
@@ -35,38 +35,63 @@ class Body extends Component {
     const sphere = new THREE.Mesh(geometry, material);
     scene.add(sphere);
 
-    //Light 1 
+    //Light 1 wGUI 
     //Make GUI folder
     const light1 = gui.addFolder('Light 1')
-    const pointLight = new THREE.PointLight(0xffffff, 0.2)
-    pointLight.intensity = 1;
-    pointLight.position.set(-10,5.58,-3)
-    scene.add(pointLight)
+    const pointLight1 = new THREE.PointLight(0xffffff, 0.2)
+    pointLight1.intensity = .09;
+    pointLight1.position.set(3.95,-10,20)
+    scene.add(pointLight1)
   
-    light1.add(pointLight.position, 'y').min (-3).max(20).step(.01)
-    light1.add(pointLight.position, 'x').min (-10).max(20).step(.01)
-    light1.add(pointLight.position, 'z').min (-3).max(20).step(.01)
-    light1.add(pointLight, 'intensity').min (-3).max(20).step(.01)
+    light1.add(pointLight1.position, 'y').min (-10).max(20).step(.01)
+    light1.add(pointLight1.position, 'x').min (-10).max(20).step(.01)
+    light1.add(pointLight1.position, 'z').min (-10).max(20).step(.01)
+    light1.add(pointLight1, 'intensity').min (-3).max(20).step(.01)
 
-    const pointLightHelper1 = new THREE.PointLightHelper(pointLight, .5)
+    const pointLightHelper1 = new THREE.PointLightHelper(pointLight1, .5)
     scene.add(pointLightHelper1)
     
     
 
-    //Light 2
-    const pointLight2 = new THREE.PointLight(0xff0000, .2)
+    //Light 2 w/GUI
+    const pointLight2 = new THREE.PointLight(0xf0ff, .2)
     const light2 = gui.addFolder('Light 2')
-        pointLight2.intensity = 2.95;
-        pointLight2.position.set(-10,5.58,-3)
+        pointLight2.intensity = 1.1;
+        pointLight2.position.set(-10,4.2,-4)
         scene.add(pointLight2)
       
-        light2.add(pointLight2.position, 'y').min (-3).max(20).step(.01)
+        light2.add(pointLight2.position, 'y').min (-10).max(20).step(.01)
         light2.add(pointLight2.position, 'x').min (-10).max(20).step(.01)
-        light2.add(pointLight2.position, 'z').min (-3).max(20).step(.01)
+        light2.add(pointLight2.position, 'z').min (-10).max(20).step(.01)
         light2.add(pointLight2, 'intensity').min (-3).max(20).step(.01)
 
         const pointLightHelper = new THREE.PointLightHelper(pointLight2, .5)
         scene.add(pointLightHelper)
+
+    //Light 3 w/GUI
+    const pointLight3 = new THREE.PointLight(0xff009a, .2)
+    const light3 = gui.addFolder('Light 3')
+        pointLight3.intensity = 1.1;
+        pointLight3.position.set(20,-10,-10)
+        scene.add(pointLight3)
+      
+        light3.add(pointLight3.position, 'y').min (-10).max(20).step(.01)
+        light3.add(pointLight3.position, 'x').min (-10).max(20).step(.01)
+        light3.add(pointLight3.position, 'z').min (-10).max(20).step(.01)
+        light3.add(pointLight3, 'intensity').min (-3).max(20).step(.01)
+
+        const pointLightHelper3 = new THREE.PointLightHelper(pointLight3, .5)
+        scene.add(pointLightHelper3)
+
+    //Allow GUI to change colour
+    const light1colour = { color : 0xff0000 }
+    light1.addColor(light1colour, 'color').onChange(() => {pointLight1.color.set(light1colour.color)})  
+
+    const light2colour = { color : 0xff0000 }
+    light2.addColor(light2colour, 'color').onChange(() => {pointLight2.color.set(light2colour.color)})  
+
+    const light3colour = { color : 0xff0000 }
+    light3.addColor(light3colour, 'color').onChange(() => {pointLight3.color.set(light3colour.color)})    
 
     //Sizes
    const sizes = 
@@ -107,14 +132,43 @@ class Body extends Component {
     //Scene colour
     //scene.background = new THREE.Color(0xFFE185);
 
+    //Animate on mouse move
+    document.addEventListener('mousemove', onDocumentMouseMove)
+
+    let mouseX = 0
+    let mouseY = 0
+
+    let targetX = 0
+    let targetY = 0
+
+    const windowX = window.innerWidth/2;
+    const windowY = window.innerHeight/2;
+
+    function onDocumentMouseMove(event) {
+      mouseX = (event.clientX - windowX)
+      mouseY = (event.cientY - windowY)
+    }
+  
+    const clock = new THREE.Clock()
 
     var animate = function() {
-      requestAnimationFrame(animate);
+
+      const elapsedTime = clock.getElapsedTime()
+
+      targetX = mouseX * .001
+      targetY = mouseY * .001
+
+      sphere.rotation.y = 0.5 * elapsedTime;
+      //sphere.rotation.x = -0.015 * elapsedTime;
+      sphere.rotation.y += .5 *(targetX - sphere.rotation.y)
+      //sphere.rotation.x += .5 *(targetY - sphere.rotation.x)
+      //sphere.rotation.z += -.5 *(targetY - sphere.rotation.x)
+      
 
       
-      sphere.rotation.y += 0.01;
 
       renderer.render(scene, camera);
+      window.requestAnimationFrame(animate);
     };
 
     animate();
