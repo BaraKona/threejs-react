@@ -192,7 +192,7 @@ class Body extends Component {
       sphere.position.z += -.05 * (targetY - sphere.rotation.x)
 
       //particles rotation
-      particlesMesh.rotation.y = 0.5 * elapsedTime;
+      particlesMesh.rotation.x = 0.5 * elapsedTime;
       particlesMesh.rotation.x = mouseY * (elapsedTime * .0008)
       particlesMesh.rotation.y = mouseX * (elapsedTime * .0008)
       
