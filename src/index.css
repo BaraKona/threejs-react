@@ -8,25 +8,70 @@
 
 body {
   font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
 
 hmtl, body{
   place-items: center;
   height: 100vh;
-  background: rgb(24,24,24);
+  background: rgb(8,8,8)
 }
-.header {
-  display: flex;
-  align-items: center;
-  text-align: center;
+
+.header
+{
+  position:relative;
+  display: grid;
+  place-items: center;
   margin: 10px;
-  color:#fffeee;
+  min-height: 100vh;
+  
+}
+h1 
+{
+  position:relative;
+  font-size: 140px;
+  text-transform: uppercase;
+  display: grid;
+  place-items: center;
+  margin: 10px;
+  color:rgba(36, 36, 37, 0.747);
+  -webkit-text-stroke: 0.005vw rgb(8,8,8);
+}
+h1::before
+{
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:0;
+  height: 100%;
+  color: #00ffff;
+  border-right: 2px solid #ff00f2;
+  overflow: hidden;
+  animation: animate 6s linear infinite;
+}
+@keyframes animate
+{
+  0%,10%, 100%
+  {
+    width: 0;
+  }
+  70%, 90%
+  {
+    width: 110%;
+  }
+}
+
+section 
+{
+  height: 100vh;
 }
 
 .webgl
 {
-  position:fixed;
+  position:absolute;
   top:0;
   left:0;
   outline:none;
+  mix-blend-mode: exclusion;
 }
