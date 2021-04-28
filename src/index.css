@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   overflow-x: hidden;
 }
 
@@ -28,6 +28,7 @@ hmtl, body{
 }
 h1 
 {
+  letter-spacing: 5px;
   position:relative;
   font-size: 140px;
   text-transform: uppercase;
@@ -46,7 +47,7 @@ h1::before
   width:0;
   height: 100%;
   color: #00ffff;
-  border-right: 2px solid #ff00f2;
+  border-right: 2px solid #ff0077;
   overflow: hidden;
   animation: animate 6s linear infinite;
 }
