@@ -1,7 +1,7 @@
 const Header = () => {
     return (
         <header className = 'header'>
-            <h1 data-text = "Bara's Canvas"> Bara's Canvas</h1>
+            <h1 data-text = " Bara's  Canvas"> Bara's Canvas</h1>
         </header>
         
     )
