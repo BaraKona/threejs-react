@@ -12,7 +12,6 @@ function App() {
       <Header></Header>
       <Body></Body>
       <About></About>
-      <Skew></Skew>
       <Notability></Notability>
     </div>
   );

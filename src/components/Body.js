@@ -194,9 +194,9 @@ class Body extends Component {
       //particles rotation
       particlesMesh.rotation.x = 0.1 * elapsedTime;
       particlesMesh.rotation.y = 0.1 * elapsedTime;
-      //particlesMesh.rotation.x = mouseY * (elapsedTime * .0008)
-      //particlesMesh.rotation.y = mouseX * (elapsedTime * .0008)
-      
+      particlesMesh.rotation.x = mouseY * (1 * .0003)
+      particlesMesh.rotation.y = mouseX * (1 * .0003)
+      particlesMesh.rotation.y = -0.25 * elapsedTime;
       //particlesMesh.rotation.y += .005 * (targetX - particlesMesh.rotation.y)
     };
 
