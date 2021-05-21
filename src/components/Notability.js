@@ -4,8 +4,8 @@ import JournalitySc from '../img/JournalitySc.png';
 
 const Notability = () => {
     return (
+        <div>
         <body className = 'Notability'>
-            
             <h1> Journality </h1>
             <h2> The Productivity Tool *</h2>
             
@@ -43,20 +43,25 @@ const Notability = () => {
                 </div>
                 <div className = "info5" data-tilt> 
                     <b>Window C: </b> Here you can see how the pop up window looks. After inputing time, you will be able to see the timer at the top left.
-                    <br></br><br></br> Additionally, there is a pause button which will pause for 15 minutes before staring. There is no way to stop it indefinitely.
+                    <br></br><br></br> Additionally, there is a pause button which will halt for 15 minutes before resuming again. There is no way to stop it indefinitely.
                     <br></br><br></br>There is also a directional button at the top left, which will (if timer hasn't started) cancel window C and revert back to the main interface.
                     <br></br><br></br>Finally, there is a tick, which you press when you have finished and time has run out.  
                 </div>
                 <div className = "info6" data-tilt> 
                     Desktop background image.
                 </div>
-            <div className = "Window">
-            <img src = {JournalitySc} alt = "img of journality running"></img>
-            </div>
+                <div className = "Window">
+                    <img src = {JournalitySc} alt = "img of journality running"></img>
+                </div>
+                <div className = "button1">
+                <a href="https://github.com/BaraKona/WindowsFormsApp1" class="button" target = "_blank"><span>CODE</span></a>
+                </div>
             <script src="../vanilla-tilt.min.js"></script>
-            
         </body>
-        
+        <div className = "skew">
+
+        </div>
+        </div>
     )
 }
 
