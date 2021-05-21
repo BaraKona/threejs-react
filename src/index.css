@@ -80,10 +80,9 @@ html, body{
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   padding: 1.6%;
-  margin: 10px;
   position: absolute;
   top: 92%;
-  left: 25%;
+  left: 20%;
   transform: translate(-50%, -50%);
   width: 100%;
   font-size: 20px;
@@ -137,11 +136,13 @@ display: block;
 
 .Notability
 {
-  padding-right: 85px;
+  padding-right: 40px;
   padding-bottom: 20px;
+  padding-top: 50px;
+  padding-left: 40px;
   display: grid;
   grid-template-columns: repeat(5,1fr);
-  padding-top: 50px;
+  
   background-color:rgb(36, 36, 36);
   
 }
@@ -178,6 +179,7 @@ display: block;
   border-color: rgba(255, 0, 85, 0.068); */
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
   height: 45vh;
+  border-radius: 10%;
 }
 .body2
 {
@@ -194,26 +196,130 @@ display: block;
   margin-left: 5px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
   height: 45vh;
+  border-radius: 10%;
 }
 .img 
 {
+  opacity: 0.8;
   width: 423px;
-  height: 70vh;
+  height: 673px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 1);
   grid-column: 2 / 3;
   grid-row: 3 / 5;
 }
 
 
-
-info1
+.info1
 {
+  font-family: 'Courier New', monospace;
   position: absolute;
-  top: 130%;
-  left: 50%;
+  top: 120%;
+  left: 4%;
   z-index: 10;
   border-radius: 50%;
   background-color:#e79aa78f;
-  grid-column: 1;
-  grid-row: 3;
+  width: 350px;
+  height: 350px;
+  font-size: 15px;
+  color: white;
+  text-align: justify;
+  padding: 55px;
+}
+.info2
+{
+  font-family: 'Courier New', monospace;
+  position: absolute;
+  top: 101%;
+  left: 35%;
+  z-index: 9;
+  border-radius: 50%;
+  background-color:#9aace76c;
+  width: 260px;
+  height: 260px;
+  font-size: 14.5px;
+  color: white;
+  text-align: justify;
+  padding: 33px;
+  padding-top: 55px;
+}
+.info3
+{
+  font-family: 'Courier New', monospace;
+  position: absolute;
+  top: 128%;
+  left: 41%;
+  z-index: 9;
+  border-radius: 50%;
+  background-color:#d89ae76c;
+  width: 290px;
+  height: 270px;
+  font-size: 15px;
+  color: white;
+  text-align: justify;
+  padding: 33px;
+  padding-top: 48px;
+  padding-left: 40px;
+}
+.info4
+{
+  font-family: 'Courier New', monospace;
+  position: absolute;
+  top: 156%;
+  left: 14%;
+  z-index: 9;
+  border-radius: 50%;
+  background-color:#b836366c;
+  width: 340px;
+  height: 340px;
+  font-size: 15px;
+  color: white;
+  text-align: justify;
+  padding: 33px;
+  padding-top: 65px;
+  padding-left: 40px;
+}
+.info5
+{
+  font-family: 'Courier New', monospace;
+  position: absolute;
+  top: 205%;
+  left: 46%;
+  z-index: 9;
+  border-radius: 50%;
+  background-color:#c1eb2a56;
+  width: 490px;
+  height: 470px;
+  font-size: 15px;
+  color: white;
+  text-align: justify;
+  padding: 33px;
+  padding-top: 110px;
+  padding-left: 40px;
+}
+.info6
+{
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  position: absolute;
+  top: 175%;
+  left: 60%;
+  z-index: 9;
+  border-radius: 50%;
+  background-color:#00eeff59;
+  width: 150px;
+  height: 150px;
+  font-size: 15px;
+  color: white;
+  padding: 33px;
+  padding-top: 50px;
+}
+.Window
+{
+  grid-row: 5;
+  grid-column: 1 / 6;
+  padding-right: 85px;
+  -webkit-mask-image: -webkit-gradient(linear, right top, left top, 
+    from(rgba(0,0,0,1)), to(rgba(25, 3, 43, 0.178)));
+  mask-image: url();  
+  
 }
