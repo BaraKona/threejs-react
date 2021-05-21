@@ -73,7 +73,7 @@ class Body extends Component {
     
 
     //Light 2 w/GUI
-    const pointLight2 = new THREE.PointLight(0xf0ff, .2)
+    const pointLight2 = new THREE.PointLight(0x280057, .2)
     const light2 = gui.addFolder('Light 2')
         pointLight2.intensity = 1.1;
         pointLight2.position.set(-10,4.2,-4)
@@ -88,7 +88,7 @@ class Body extends Component {
         //scene.add(pointLightHelper)
 
     //Light 3 w/GUI
-    const pointLight3 = new THREE.PointLight(0xff009a, .2)
+    const pointLight3 = new THREE.PointLight(0x120027, .2)
     const light3 = gui.addFolder('Light 3')
         pointLight3.intensity = 1.1;
         pointLight3.position.set(20,-10,-10)

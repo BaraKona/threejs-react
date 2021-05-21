@@ -6,7 +6,7 @@
   
 }
 html, body{
-  background-color: rgb(41, 38, 38);
+  background: radial-gradient(rgb(18, 0, 39), rgb(5, 5, 5));
 }
 .webgl
 {
@@ -14,14 +14,14 @@ html, body{
   top:0;
   left:0;
   outline:none;
-  mix-blend-mode: exclusion;
+  mix-blend-mode:normal;
 }
 .hcontainer 
 {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(5, 200px);
-  background-color: black;
+  background: radial-gradient(rgb(18, 0, 39), rgb(5, 5, 5));
 }
 .header
 {
@@ -137,11 +137,12 @@ display: block;
 
 .Notability
 {
-  margin-right: 80px;
+  padding-right: 85px;
+  padding-bottom: 20px;
   display: grid;
   grid-template-columns: repeat(5,1fr);
-  margin-top: 50px;
-  background-color: rgb(41, 38, 38);
+  padding-top: 50px;
+  background-color:rgb(36, 36, 36);
   
 }
 .Notability h1
@@ -163,39 +164,56 @@ display: block;
   font-size: 30px;
   padding-bottom: 10px;
 }
-.Notability body1
+.body1
 {
-  background-color: rgb(47, 51, 53);
+  font-family: 'Courier New', monospace;
+  background-color: rgba(59, 9, 53, 0.438);
   color: white;
   grid-column: 4;
   grid-row: 3;
   font-size: 20px;
   padding: 20px;
-  border-style: solid ;
+  /*border-style: solid ;
   border-radius: 1px;
-  border-color: black;
+  border-color: rgba(255, 0, 85, 0.068); */
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
-  height: 30vh;
+  height: 45vh;
 }
-.Notability body2
+.body2
 {
-  background-color: rgb(48, 44, 44);
+  font-family: 'Courier New', monospace;
+  background-color: rgba(250, 0, 0, 0.068);
   color: white;
   grid-column: 5;
   grid-row: 3;
   font-size: 20px;
   padding: 20px;
-  border-style: solid ;
+  /*border-style: solid ;
   border-radius: 1px;
-  border-color: black;
+  border-color: rgba(126, 0, 151, 0.158); */
   margin-left: 5px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
-  height: 30vh;
+  height: 45vh;
 }
-.Notability img
+.img 
 {
+  width: 423px;
+  height: 70vh;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 1);
-  align-items: center;
   grid-column: 2 / 3;
+  grid-row: 3 / 5;
+}
+
+
+
+info1
+{
+  position: absolute;
+  top: 130%;
+  left: 50%;
+  z-index: 10;
+  border-radius: 50%;
+  background-color:#e79aa78f;
+  grid-column: 1;
   grid-row: 3;
 }
