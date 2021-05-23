@@ -4,6 +4,7 @@ import About from './components/About'
 import JavaFinch from './components/JavaFinch'
 import Notability from './components/Notability'
 import Tilt from 'react-vanilla-tilt';
+import { InterpolateSmooth } from 'three'
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
       <About></About>
       <Notability></Notability>
       <JavaFinch></JavaFinch>
-      <Tilt></Tilt>
+      <Tilt> Thanks for reading :D</Tilt>
     </div>
   );
 }
