@@ -7,6 +7,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `NOTE: This project is meant to be opened at 100% zoom and FULL SCREEN`
 
-![](Screenshot 2021-06-01 160308.png)
+![](Screenshot_2021-06-01_160308.png)
 
 
