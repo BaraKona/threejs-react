@@ -58,9 +58,9 @@ html, body{
   color: #ffffff;
   border-right: 2px solid #ff0077;
   overflow: hidden;
-  animation: animate 6s linear infinite;
+  animation: animate1 6s linear infinite;
 }
-@keyframes animate
+@keyframes animate1
 {
   0%,10%, 100%
   {
