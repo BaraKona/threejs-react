@@ -1,4 +1,4 @@
-:root 
+:root
 {
   --font1: 'Courier New', monospace;
   --font2:  Georgia, serif;
@@ -21,7 +21,7 @@ html, body{
   outline:none;
   mix-blend-mode:normal;
 }
-.hcontainer 
+.hcontainer
 {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -34,9 +34,9 @@ html, body{
   grid-row:1;
   grid-column: 1;
   margin: 10px;
-  
+
 }
-.header h1 
+.header h1
 {
   font-family: var(--font2);
   letter-spacing: 5px;
@@ -57,8 +57,9 @@ html, body{
   height: 100%;
   color: #ffffff;
   border-right: 2px solid #ff0077;
+  white-space: nowrap;
   overflow: hidden;
-  animation: animate1 6s linear infinite;
+  animation: animate1 6s steps(60, end);
 }
 @keyframes animate1
 {
@@ -66,10 +67,10 @@ html, body{
   {
     width: 0;
   }
-  70%, 90%
+  /*70%, 90%
   {
     width: 100%;
-  }
+  }*/
 }
 
 .About
@@ -80,7 +81,7 @@ html, body{
   grid-template-columns: repeat(5, 1fr);
   background-color: black;
 }
-.card 
+.card
 {
   z-index: 10;
   grid-column: 2;
@@ -103,7 +104,7 @@ text-transform: uppercase;
 display: block;
 }
 .text1
-{ 
+{
   font-weight: lighter;
   color:rgb(223, 202, 157);
   font-size: 60px;
@@ -119,7 +120,7 @@ display: block;
   font-weight: bold;
   font-size: 30px;
   color: #e79aa7;
-  
+
 
 }
 @keyframes text
@@ -154,9 +155,9 @@ display: block;
   padding-left: 40px;
   display: grid;
   grid-template-columns: repeat(5,1fr);
-  
+
   background-color:rgb(36, 36, 36);
-  
+
 }
 .Notability h1
 {
@@ -167,7 +168,7 @@ display: block;
   grid-column: 4 / 6;
   color: rgb(219, 219, 219);
   font-size: 50px;
-  
+
 }
 .Notability h2
 {
@@ -211,7 +212,7 @@ display: block;
   height: 29vh;
   border-radius: 10%;
 }
-.img 
+.img
 {
   opacity: 0.8;
   width: 423px;
@@ -331,9 +332,9 @@ display: block;
   grid-row: 5;
   grid-column: 1 / 6;
   padding-right: 85px;
-  -webkit-mask-image: -webkit-gradient(linear, right top, left top, 
+  -webkit-mask-image: -webkit-gradient(linear, right top, left top,
     from(rgba(0,0,0,1)), to(rgba(25, 3, 43, 0.178)));
-  mask-image: url();  
+  mask-image: url();
 }
 .skew
 {
@@ -346,7 +347,7 @@ display: block;
   top: 270%;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.5);
 }
-.button1 
+.button1
 {
   background-color: orange;
   left: 85%;
@@ -406,11 +407,11 @@ display: block;
 }
 /*@keyframes animate
 {
-  0% {background-color: rgb(35,35,35);} 
+  0% {background-color: rgb(35,35,35);}
   50% {background-color: rgb(255, 255, 255);}
   100% {background-color: rgb(35,35,35);}
 } */
-.Jtitle 
+.Jtitle
 {
   color: rgb(0, 101, 168);
   font-weight: bold;
@@ -585,7 +586,7 @@ display: block;
   color: rgba(255, 251, 0, 0.801);
 }
 .Jinfo4 span1
-{ 
+{
   color: rgb(73, 138, 192);
 }
 .Jinfo4 span2
@@ -630,7 +631,7 @@ display: block;
   color: rgba(255, 251, 0, 0.801);
 }
 .Jinfo5 span1
-{ 
+{
   color: rgb(73, 138, 192);
 }
 .Jinfo5 span2
