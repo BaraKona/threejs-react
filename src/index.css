@@ -20,6 +20,7 @@ html, body{
   left:0;
   outline:none;
   mix-blend-mode:normal;
+  min-height: 50vh;
 }
 .hcontainer
 {
